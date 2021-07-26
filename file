@@ -1,0 +1,70 @@
+using System;
+
+namespace DayOfWeek
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string month = Console.ReadLine();
+            int nights = int.Parse(Console.ReadLine());
+            double Studioprice = 0;
+            double Apartmentprice = 0;
+            switch (month)
+            {
+                case ("May"):
+                case ("October"):
+                    Studioprice = nights * 50;
+                    Apartmentprice = nights * 65;
+                    if (nights > 7 && nights <= 14)
+                    {
+                        Console.WriteLine($"Apartment: {Apartmentprice:F2} lv.");
+                        Console.WriteLine($"Studio: {(Studioprice * 0.95):F2} lv.");
+                    }
+                    else if (nights > 14)
+                    {
+                        Console.WriteLine($"Apartment: {(Apartmentprice * 0.90):F2} lv.");
+                        Console.WriteLine($"Studio: {(Studioprice * 0.70):F2} lv.");
+                    }
+                    else if (nights <= 7)
+                    {
+                        Console.WriteLine($"Apartment: {Apartmentprice:F2} lv.");
+                        Console.WriteLine($"Studio: {Studioprice:F2} lv.");
+                    }
+                    break;
+                case ("June"):
+                case ("September"):
+                    Studioprice = nights * 75.20;
+                    Apartmentprice = nights * 68.70;
+                    if (nights > 14)
+                    {
+                        Console.WriteLine($"Apartment: {(Apartmentprice * 0.90):F2} lv.");
+                        Console.WriteLine($"Studio: {(Studioprice * 0.80):F2} lv.");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Apartment: {Apartmentprice:F2} lv.");
+                        Console.WriteLine($"Studio: {Studioprice:F2} lv.");
+                    }
+                    break;
+                case ("July"):
+                case ("August"):
+                    Studioprice = nights * 76;
+                    Apartmentprice = nights * 77;
+                    if (nights > 14)
+                    {
+                        Console.WriteLine($"Apartment: {(Apartmentprice * 0.90):F2} lv.");
+                        Console.WriteLine($"Studio: {Studioprice:F2} lv.");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Apartment: {Apartmentprice:F2} lv.");
+                        Console.WriteLine($"Studio: {Studioprice:F2} lv.");
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+}
